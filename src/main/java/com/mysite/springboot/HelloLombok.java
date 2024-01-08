@@ -1,5 +1,10 @@
 package com.mysite.springboot;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class HelloLombok {
     private String hello;
     private int lombok;

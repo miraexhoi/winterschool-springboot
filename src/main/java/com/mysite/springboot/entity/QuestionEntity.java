@@ -1,12 +1,9 @@
-package com.mysite.springboot;
+package com.mysite.springboot.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -32,4 +29,9 @@ public class QuestionEntity {
     private String content;
 
     private LocalDateTime createDate;
+
+    // 1:N
+    // CascadeType.REMOVE : 질문을 삭제하면 그에 달린 답변들도 함께 삭제
+    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+    private List<AnswerEntity> answerList;
 }

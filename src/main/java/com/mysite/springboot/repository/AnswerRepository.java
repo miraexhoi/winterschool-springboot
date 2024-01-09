@@ -1,6 +1,6 @@
 package com.mysite.springboot.repository;
 
-import com.mysite.springboot.entity.AnswerEntity;
+import com.mysite.springboot.domain.AnswerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AnswerRepository extends JpaRepository<AnswerEntity, Integer> {

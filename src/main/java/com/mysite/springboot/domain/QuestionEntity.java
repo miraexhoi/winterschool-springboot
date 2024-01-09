@@ -1,4 +1,4 @@
-package com.mysite.springboot.entity;
+package com.mysite.springboot.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -30,6 +30,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtimeOnly 'com.h2database:h2'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // testRuntimeOnly: 해당 라이브러리가 테스트 실행 시에만 사용됨을 의미
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('bootBuildImage') {

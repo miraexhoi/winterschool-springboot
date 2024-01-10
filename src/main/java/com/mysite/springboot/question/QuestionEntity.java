@@ -1,8 +1,9 @@
-package com.mysite.springboot.domain;
+package com.mysite.springboot.question;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.mysite.springboot.answer.AnswerEntity;
 import jakarta.persistence.*;
 
 import lombok.Getter;

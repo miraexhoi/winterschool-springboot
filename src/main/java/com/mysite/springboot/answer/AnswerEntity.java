@@ -1,5 +1,6 @@
-package com.mysite.springboot.domain;
+package com.mysite.springboot.answer;
 
+import com.mysite.springboot.question.QuestionEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

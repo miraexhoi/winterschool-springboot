@@ -1,6 +1,5 @@
-package com.mysite.springboot.repository;
+package com.mysite.springboot.question;
 
-import com.mysite.springboot.domain.QuestionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

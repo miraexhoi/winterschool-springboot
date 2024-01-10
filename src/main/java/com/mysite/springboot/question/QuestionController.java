@@ -12,8 +12,7 @@ import java.util.List;
 @Controller
 public class QuestionController {
     private final QuestionService questionService;
-    @GetMapping("/question/list")
-    @ResponseBody
+    @GetMapping("/list")
     public String list(Model model) {
         List<QuestionEntity> questionEntityList = this.questionService.getList();
         model.addAttribute("quesitonList",questionEntityList);

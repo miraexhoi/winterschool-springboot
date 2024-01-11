@@ -1,6 +1,6 @@
 package com.mysite.springboot.controller;
 
-import com.mysite.springboot.AnswerForm;
+import com.mysite.springboot.form.AnswerForm;
 import com.mysite.springboot.entity.QuestionEntity;
 import com.mysite.springboot.service.AnswerService;
 import com.mysite.springboot.service.QuestionService;
@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RequestMapping("/answer")
 @RequiredArgsConstructor

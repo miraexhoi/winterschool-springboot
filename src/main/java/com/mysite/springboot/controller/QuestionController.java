@@ -1,7 +1,7 @@
 package com.mysite.springboot.controller;
 
-import com.mysite.springboot.AnswerForm;
-import com.mysite.springboot.QuestionForm;
+import com.mysite.springboot.form.AnswerForm;
+import com.mysite.springboot.form.QuestionForm;
 import com.mysite.springboot.entity.QuestionEntity;
 import com.mysite.springboot.service.QuestionService;
 import jakarta.validation.Valid;
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequestMapping("/question")
 @RequiredArgsConstructor

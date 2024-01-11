@@ -13,80 +13,79 @@ import java.time.LocalDateTime;
 
 @SpringBootTest
 class WinterschoolSpringbootApplicationTests {
-    @Autowired
+    @Autowired //생성자 없이 자동으로 내용 밀어줌
     private QuestionRepository questionRepository;
-
     @Autowired
     private AnswerRepository answerRepository;
 
     @Test
-    void testJPA() {
-
-        QuestionEntity q1 = new QuestionEntity();
-        q1.setSubject("springboot가 무엇인가요?");
-        q1.setContent("springboot에 대해 알고 싶습니다.");
-        q1.setCreateDate(LocalDateTime.now());
-        this.questionRepository.save(q1); // 첫번째 질문 저장
-
-        QuestionEntity q2 = new QuestionEntity();
-        q2.setSubject("springboot 모델 질문입니다.");
-        q2.setContent("id는 자동으로 생성되나요?");
-        q2.setCreateDate(LocalDateTime.now());
-        this.questionRepository.save(q2);
+    void testJpa() { // 테스트하는 메소드를 의미
+        //junit으로 실행됨
 
 
-//        assertEquals(2, this.questionRepository.count());
-//        Optional<QuestionEntity> oq = this.questionRepository.findById(1);
-//        assertTrue(oq.isPresent());
-//        QuestionEntity q = oq.get();
-//        this.questionRepository.delete(q);
-//        assertEquals(1, this.questionRepository.count());
-
-//        Optional<QuestionEntity> oq = this.questionRepository.findById(1);
-//        assertTrue(oq.isPresent());
-//        QuestionEntity q = oq.get();
-//        q.setSubject("수정된 제목");
-//        this.questionRepository.save(q);
-
-//        List<QuestionEntity> qList = this.questionRepository.findBySubjectLike("sbb%");
-//        QuestionEntity q = qList.get(0);
-//        assertEquals("sbb가 무엇인가요?", q.getSubject());
-
-
-//        Optional<QuestionEntity> oq = this.questionRepository.findById(1);
-//        if(oq.isPresent()) {
-//            QuestionEntity q = oq.get();
-//            assertEquals("sbb가 무엇인가요?", q.getSubject());
-//        }
-
-//        List<QuestionEntity> all = this.questionRepository.findAll();
-//        assertEquals(2, all.size());
-//
-//        QuestionEntity q = all.get(0);
-//        assertEquals("springboot가 무엇인가요?", q.getSubject());
-
-//        QuestionEntity q1 = new QuestionEntity();
-//        q1.setSubject("springboot가 무엇인가요?");
-//        q1.setContent("springboot에 대해 알고 싶습니다.");
-//        q1.setCreateDate(LocalDateTime.now());
-//        this.questionRepository.save(q1); // 첫번째 질문 저장
-//
-//        QuestionEntity q2 = new QuestionEntity();
-//        q2.setSubject("springboot 모델 질문입니다.");
-//        q2.setContent("id는 자동으로 생성되나요?");
-//        q2.setCreateDate(LocalDateTime.now());
-//        this.questionRepository.save(q2);
-
-
-        //Optional<QuestionEntity> oq = this.questionRepository.findById(2);
-        //        assertTrue(oq.isPresent()); // 값이 있는지 없는지 체크
-        //        QuestionEntity q = oq.get();
-        //
-        //        AnswerEntity a = new AnswerEntity();
-        //        a.setContent("네 자동으로 생성됩니다.");
-        //        a.setQuestion(q);  // 어떤 질문의 답변인지 알기위해서 Question 객체가 필요하다.
-        //        a.setCreateDate(LocalDateTime.now());
-        //        this.answerRepository.save(a);
     }
 
 }
+
+//QUESTION
+//Create
+
+//                Question q1 = new Question();
+//                q1.setSubject("sbb가 무엇인가요?");
+//                q1.setContent("sbb에 대하여 알고싶습니다.");
+//                q1.setCreateDate(LocalDateTime.now());
+//                this.questionRepository.save(q1);
+//
+//                Question q2 = new Question();
+//                q2.setSubject("스프링부트 모델 질문입니다.");
+//                q2.setContent("id는 자동으로 생성되나요?");
+//                q2.setCreateDate(LocalDateTime.now());
+//                this.questionRepository.save(q2);
+//
+
+
+//Read
+//                List<Question> qList = this.questionRepository.findBySubjectLike("sbb%");//데이터가 여러개일 수도 있으니 리스트로 생성
+//                                                                    //sbb% = sbb로 시작하는 문자열
+//                                                                    //%sbb = sbb로 끝나는 문자열
+//                                                                    //%sbb% = sbb가 포함된 문자열
+//                Question q = qList.get(0);
+//                assertEquals("sbb가 무엇인가요?",q.getSubject());
+
+
+//Update
+//Optional<Question> oq = questionRepository.findById(1);
+//        //optional 는 값이 있을지 없을지 몰라 사용한다
+//        assertTrue(oq.isPresent());
+//        Question q = oq.get();
+//        q.setSubject("수정된 제목");
+//        this.questionRepository.save(q);
+
+
+//Delete
+//assertEquals(2, this.questionRepository.count());
+//        Optional<Question> oq = this.questionRepository.findById(1);
+//        assertTrue(oq.isPresent());
+//        Question q = oq.get();
+//        this.questionRepository.delete(q);
+//        assertEquals(1,this.questionRepository.count());
+
+
+//ANSWER
+//Create
+//Optional<Question> oq = this.questionRepository.findById(2);
+//        assertTrue(oq.isPresent());
+//        Question q = oq.get();
+//
+//        Answer a = new Answer();
+//        a.setContent("자동으로 생성됩니다");
+//        a.setQuestion(q);
+//        a.setCreateDate(LocalDateTime.now());
+//        this.answerRepository.save(a);
+
+
+//Read
+//Optional<Answer> oa = this.answerRepository.findById(1);
+//        assertTrue(oa.isPresent());
+//        Answer a = oa.get();
+//        assertEquals(2,a.getQuestion().getId());

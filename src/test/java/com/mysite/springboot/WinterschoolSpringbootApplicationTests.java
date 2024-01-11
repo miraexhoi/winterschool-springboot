@@ -1,9 +1,8 @@
 package com.mysite.springboot;
 
-import com.mysite.springboot.answer.AnswerEntity;
-import com.mysite.springboot.question.QuestionEntity;
-import com.mysite.springboot.answer.AnswerRepository;
-import com.mysite.springboot.question.QuestionRepository;
+import com.mysite.springboot.entity.QuestionEntity;
+import com.mysite.springboot.repository.AnswerRepository;
+import com.mysite.springboot.repository.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @SpringBootTest
 class WinterschoolSpringbootApplicationTests {

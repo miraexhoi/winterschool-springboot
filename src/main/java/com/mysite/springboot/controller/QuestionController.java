@@ -1,10 +1,11 @@
-package com.mysite.springboot.question;
+package com.mysite.springboot.controller;
 
+import com.mysite.springboot.entity.QuestionEntity;
+import com.mysite.springboot.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 

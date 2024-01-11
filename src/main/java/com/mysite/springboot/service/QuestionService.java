@@ -1,9 +1,9 @@
-package com.mysite.springboot.question;
+package com.mysite.springboot.service;
 
-import com.mysite.springboot.DataNotFoundException;
+import com.mysite.springboot.exception.DataNotFoundException;
+import com.mysite.springboot.entity.QuestionEntity;
+import com.mysite.springboot.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.context.config.ConfigDataLocationNotFoundException;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

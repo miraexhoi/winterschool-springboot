@@ -1,4 +1,4 @@
-package com.mysite.springboot;
+package com.mysite.springboot.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -8,5 +8,6 @@ public class DataNotFoundException extends RuntimeException{
     private static final long serialVersionUid = 1L;
     public DataNotFoundException(String message) {
         super(message);
+
     }
 }

@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
 <div class="container my-3">
+
     <table class="table">
         <thead class="table-dark">
         <tr>
@@ -9,12 +10,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="question, loop : ${quesitonList}">
+        <tr th:each="question,loop : ${questionList}">  <!--th는 타임리프 변수-->
             <td th:text="${loop.count}"></td>
             <td>
-                <a th:href="@{|/question/detail/${quesiton.id}|}" th:text="${question.subject}"></a>
+                <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
             </td>
-            <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${#temporals.format(question.createDate,'yyyy-MM-dd HH:mm')}"></td>
         </tr>
         </tbody>
     </table>

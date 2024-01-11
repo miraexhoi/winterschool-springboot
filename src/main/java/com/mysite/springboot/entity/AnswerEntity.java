@@ -15,11 +15,13 @@ public class AnswerEntity {
     private Integer id;
 
     @Column(columnDefinition = "TEXT")
-    private String Content;
+    private String content;
 
     private LocalDateTime createDate;
 
-    // N:1
-    @ManyToOne
+    //@ManyToMany //n:n
+
+    //@OneToOne   //1:1
+    @ManyToOne  //n:1
     private QuestionEntity question;
 }

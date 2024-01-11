@@ -1,11 +1,13 @@
 package com.mysite.springboot.controller;
 
 import com.mysite.springboot.entity.QuestionEntity;
+import com.mysite.springboot.service.AnswerService;
 import com.mysite.springboot.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,10 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @Controller
 public class AnswerController {
-    public final QuestionService questionService;
-    public String createAnswer(Model model, @PathVariable("id") Integer id,
-                               @RequestParam(value = "content") String content) {
-        QuestionEntity questionEntity = this.questionService.getQuestion(id);
+
+    private final QuestionService questionService;
+    private final AnswerService answerService;
+
+
+    @PostMapping("/create/{id}")
+    public String createAnswer(Model model, @PathVariable("id") Integer id, @RequestParam(value="content") String content) {
+        QuestionEntity question = this.questionService.getQuestion(id);
+        this.answerService.create(question, content);
         return String.format("redirect:/question/detail/%s", id);
     }
 }

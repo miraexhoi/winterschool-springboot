@@ -3,9 +3,9 @@ package com.mysite.springboot.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "entity is not found")
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "entity not found")
 public class DataNotFoundException extends RuntimeException {
-    private static final long serialVersionUid = 1L;
+    private static final long serialVersionUID = 1L;
     public DataNotFoundException(String message) {
         super(message);
     }

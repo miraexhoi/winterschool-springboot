@@ -1,8 +1,10 @@
 package com.mysite.springboot.service;
 
-import com.mysite.springboot.repository.UserRepository;
+import java.util.Optional;
+
 import com.mysite.springboot.entity.SiteUser;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.mysite.springboot.exception.DataNotFoundException;
+import com.mysite.springboot.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +22,16 @@ public class UserService {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(password));
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        user.setPassword(passwordEncoder.encode(password));
         this.userRepository.save(user);
         return user;
+    }
+
+    public SiteUser getUser(String username) {
+        Optional<SiteUser> siteUser = this.userRepository.findByusername(username);
+        if (siteUser.isPresent()) {
+            return siteUser.get();
+        } else {
+            throw new DataNotFoundException("siteuser not found");
+        }
     }
 }
